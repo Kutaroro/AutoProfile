@@ -1,0 +1,121 @@
+{
+  "name": "Elyra",
+  "description": "Une mage discrète et mystérieuse.\nDeuxième ligne.\nTroisième ligne.",
+  "pre_quote": "La magie a toujours un prix.",
+  "quotes": [
+    {
+      "label": "Citation 1",
+      "text": "Je ne lance jamais deux fois le même sort."
+    },
+    {
+      "label": "Citation 2",
+      "text": "Certaines vérités doivent rester enterrées."
+    },
+    {
+      "label": "Citation 3",
+      "text": "Certaines vérités doivent rester enterrées."
+    }
+  ],
+
+  "name_full": "Elyra Vael",
+  "age": 27,
+  "specie": "Hyur",
+  "gender": "Femme",
+  "occupation": "Mage itinérante",
+  "status": "Active",
+
+  "tldr": "Une mage voyageuse qui cherche l'origine de ses pouvoirs.",
+  "hobbies": "Lire, \ndessiner des cartes et \nobserver les étoiles.",
+
+  "title": "La cartographe des brumes",
+  "design_note": "Elle porte une longue cape sombre et plusieurs bijoux anciens.",
+  "lore_note": "Elyra parcourt le monde depuis plusieurs années afin de retrouver les traces de sa famille.",
+
+  "interactions": [
+    {
+      "duo": true,
+      "with": "Kael",
+      "link": "https://exemple.com/kael",
+      "lines": [
+        {
+          "speaker": {
+            "name": "Kael",
+            "color": "#23282d",
+            "justify": "flex-end",
+            "align": "right"
+          },
+          "text": "Tu es encore partie sans prévenir."
+        },
+        {
+          "speaker": {
+            "name": "Elyra",
+            "color": "#8c3200",
+            "justify": "flex-start",
+            "align": "left"
+          },
+          "text": "Je savais que tu finirais par me retrouver."
+        },
+        {
+          "speaker": {
+            "name": "Kael",
+            "color": "#23282d",
+            "justify": "flex-end",
+            "align": "right"
+          },
+          "text": "Ce n'était pas particulièrement difficile."
+        }
+      ]
+    },
+    {
+      "duo": false,
+  "title": "Une rencontre inattendue",
+  "characters": [
+    {
+      "name": "Elyra",
+      "color": "#8c3200"
+    },
+    {
+      "name": "Kael",
+      "color": "#23282d"
+    },
+    {
+      "name": "Mira",
+      "color": "#783c82"
+    }
+  ],
+  "lines": [
+    {
+      "speaker": {
+        "name": "Mira",
+        "color": "#783c82"
+      },
+      "text": "Vous êtes enfin arrivés."
+    },
+    {
+      "speaker": {
+        "name": "Elyra",
+        "color": "#8c3200"
+      },
+      "text": "Nous avons eu un léger contretemps."
+    },
+    {
+      "speaker": {
+        "name": "Elyra",
+        "color": "#8c3200"
+      },
+      "text": "Nous avons eu un léger contretemps."
+    }
+    ,
+    {
+      "speaker": {
+        "name": "Kael",
+        "color": "#23282d"
+      },
+      "text": "Test"
+    }
+  ],
+  "commonText": "Ils reprirent ensuite la route ensemble.",
+  "commonColor": "#8c3200, #23282d, #783c82"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+<div style="max-width:900px;margin:20px auto;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:#222;background:transparent;padding:10px;"><!-- EN-TÊTE / INTRODUCTION -->
+	<div style="background:#f0e6d6;border-radius:4px;padding:22px;margin-bottom:30px;transform:rotate(-1deg);box-shadow: 0 10px 25px rgba(0,0,0,0.22);position:relative;">
+		<div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(1deg);width:110px;height:25px;background:rgba(225,210,185,0.85);border-left:2px dashed rgba(160,140,115,0.7);border-right:2px dashed rgba(160,140,115,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.2);z-index:10;pointer-events:none;"><br></div>
+		<div style="position:absolute;top:0;left:0;right:0;bottom:0;background-image:url('https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/125300111_oAx.png');background-size:cover;background-position:center;opacity:0.2;border-radius:4px;pointer-events:none;"><br></div>
+		<div style="position:relative;z-index:2;">
+			<p style="text-align:center;font-style:italic;color:#4a3b32;margin-bottom:15px;font-size:0.9em;font-weight:600;">Copied the info from the artfight profile so it may have some useless thing and missing info... Will complete with time :)</p>
+			<div style="background:rgba(255,253,248,0.95);padding:14px;border-radius:4px;text-align:center;font-size:0.85em;font-style:italic;color:#333;margin-bottom:16px;box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);"><strong>You don&#39;t want to read a novel? It&#39;s okay. Check the TL;DR and design notes ;)<br>✶<br>For lore lovers... enjoy the read! <br>Navigation: click the tabs below to switch sections.</strong></div>
+			<div style="text-align:center;margin-bottom:12px;"><img src="https://ffxiv.gamerescape.com/w/images/4/41/Mainquest1_Icon.png" alt="icon" class="fr-fic fr-dii" width="50" height="53.7031">
+				<div style="display:inline-block;vertical-align:middle;text-align:left;margin-left:10px;"><span style="font-size:26px;font-weight:bold;color:#1a252f;letter-spacing:1px;font-family:'Georgia', serif;text-shadow: 1px 1px 0px rgba(255,255,255,0.6);">{{name}}</span><br><span style="font-size:18px;color:#5a6872;font-style:italic;letter-spacing:1px;font-family:'Georgia', serif;font-weight:bold;">{{title}}</span></div>
+			</div>
+			<div style="text-align:center;color:#a04500;font-size:0.85em;margin-bottom:14px;font-weight:bold;">&mdash; ✦ &mdash;</div>
+			{{#if pre_quote}}<div class="tab-content" style="background:rgba(255,253,248,0.96);padding:14px;border-radius:4px;border:2px solid #a8937b;box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);margin-bottom:12px;">
+                    <p style="text-align:center;font-weight:bold;color:#1a252f;font-size:1em;font-family:'Georgia', serif;margin:0;white-space:pre-wrap;">&quot; {{pre_quote}} &quot;</p>
+			</div>{{/if}}<!-- Boutons citations -->
+			{{#if quotes}}<ul class="nav nav-pills justify-content-center" style="margin-bottom:12px;">
+				{{#each quotes}}<li class="nav-item"><a class="nav-link show {{#if @first}}active{{/if}}" data-bs-toggle="pill" data-toggle="tab" href="#user_quote{{@index}}" style="color:#1a252f;background:#fffaf0;padding:4px 14px;font-size:12px;font-weight:bold;border:2px solid #b8a38b;border-radius:10px;margin-right:5px;text-decoration:none;box-shadow: 0 2px 5px rgba(0,0,0,0.1);">{{label}}</a></li>{{/each}}
+			</ul><!-- Conteneur des citations -->
+			<div class="tab-content" style="background:rgba(255,253,248,0.96);padding:14px;border-radius:4px;border:2px solid #a8937b;box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);">
+				{{#each quotes}}<div class="tab-pane fade {{#if @first}}active show{{/if}}" id="user_quote{{@index}}">
+					<p style="text-align:center;font-weight:bold;color:#1a252f;font-size:1em;font-family:'Georgia', serif;margin:0;white-space:pre-wrap;">&quot; {{text}} &quot;</p>
+				</div>{{/each}}
+			</div>{{/if}}
+		</div>
+	</div><!-- SECTION FICHE DE PERSONNAGE CLASSIQUE -->
+	<div style="background:#fffaf0;border-radius:4px;padding:24px 16px 16px 16px;margin-bottom:30px;transform:rotate(0.5deg);box-shadow: 0 8px 20px rgba(0,0,0,0.18);position:relative;">
+		<div style="position:absolute;top:-8px;right:30px;transform:rotate(-2deg);width:95px;height:22px;background:rgba(225,210,185,0.85);border-left:2px dashed rgba(160,140,115,0.7);border-right:2px dashed rgba(160,140,115,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.2);z-index:10;pointer-events:none;"><br></div>
+		<h2 style="font-family:'Georgia', serif;font-style:italic;font-size:1.15em;margin:0 0 14px 0;color:#1a252f;text-align:center;text-shadow:1px 1px 0px rgba(255,255,255,0.8);"><img src="https://xivapi.com/i/061000/061419.png" alt="icon" width="20" height="20" style="margin-right:8px;vertical-align:middle;" class="fr-fic fr-dii">Character Profile</h2>
+		<div style="background:#f0e6d6;border-radius:2px;padding:16px;color:#222;box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);">
+			<div class="row">
+				<div class="col-12 col-md-6" style="font-size:0.9em;line-height:1.6;font-weight:500;">
+					<p style="margin-bottom:6px;">&bull; <strong>Name:</strong> {{name_full}}</p>
+					<p style="margin-bottom:6px;">&bull; <strong>Age:</strong> {{age}}</p>
+					<p style="margin-bottom:6px;">&bull; <strong>Species:</strong> {{specie}} &nbsp;</p>
+					<p style="margin-bottom:6px;">&bull; <strong>Gender:</strong> {{gender}}</p>
+				</div>
+				<div class="col-12 col-md-6" style="font-size:0.9em;line-height:1.6;font-weight:500;">
+					<p style="margin-bottom:6px;">&bull; <strong>Occupation:</strong> {{occupation}}</p>
+					<p style="margin-bottom:0;">&bull; <strong>Status:</strong>{{status}}</p>
+				</div>
+			</div>
+		</div>
+	</div><!-- TL;DR ET HOBBIES -->
+	<div class="row" style="margin-bottom:20px;">
+		<div class="col-12 col-md-8" style="padding:8px;">
+			<div style="background:#f0e6d6;border-radius:4px;padding:20px;margin-bottom:10px;transform:rotate(-0.5deg);box-shadow: 0 8px 20px rgba(0,0,0,0.18);position:relative;height:100%;">
+				<div style="position:absolute;top:-8px;left:25px;transform:rotate(1.5deg);width:85px;height:22px;background:rgba(225,210,185,0.85);border-left:2px dashed rgba(160,140,115,0.7);border-right:2px dashed rgba(160,140,115,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.2);z-index:10;pointer-events:none;"><br></div>
+				<div style="position:absolute;top:-8px;right:25px;transform:rotate(-2deg);width:85px;height:22px;background:rgba(225,210,185,0.85);border-left:2px dashed rgba(160,140,115,0.7);border-right:2px dashed rgba(160,140,115,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.2);z-index:10;pointer-events:none;"><br></div>
+				<div style="font-weight:bold;color:#a04500;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;font-family:'Georgia', serif;"><img src="https://ffxiv.gamerescape.com/w/images/thumb/8/8b/Mainquest4_Icon.png/40px-Mainquest4_Icon.png" alt="icon" class="fr-fic fr-dii" width="22" height="23.6406">
+					<span style="font-size:14px;">&nbsp;TL;DR</span>
+				</div>
+				<div style="background:rgba(255,253,248,0.96);padding:14px;border-radius:4px;font-size:0.9em;box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);">
+					<p style="line-height:1.6;color:#222;margin:0 0 8px;font-weight:500;white-space:pre-wrap;">{{tldr}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-4" style="padding:8px;">
+			<div style="background:#fffaf0;border-radius:4px;padding:20px;margin-bottom:10px;transform:rotate(1deg);box-shadow: 0 8px 20px rgba(0,0,0,0.18);position:relative;height:100%;">
+				<div style="position:absolute;top:-8px;right:25px;transform:rotate(-2deg);width:85px;height:22px;background:rgba(225,210,185,0.85);border-left:2px dashed rgba(160,140,115,0.7);border-right:2px dashed rgba(160,140,115,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.2);z-index:10;pointer-events:none;"><br></div>
+				<div style="font-size:0.8em;font-weight:bold;color:#a04500;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;font-family:'Georgia', serif;"><img src="https://ffxiv.gamerescape.com/w/images/thumb/e/e6/061819.png/32px-061819.png" alt="hobby-icon" class="fr-fic fr-dii" width="18" height="18">
+					<span style="font-size:14px;">HOBBIES</span>
+				</div>
+				<div style="background:#f0e6d6;border-radius:4px;padding:14px;font-size:0.9em;color:#222;line-height:1.6;font-weight:500;box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);white-space:pre-wrap;">{{hobbies}}</div>
+			</div>
+		</div>
+	</div><!-- ONGLES DE NAVIGATION STYLE "POST-ITS" SÉPARÉS -->
+	<ul class="row justify-content-center text-center nav nav-pills" style="margin:25px 0 15px 0;padding:0 10px;list-style:none;">
+		<li class="col-12 col-md-4 mb-2 mb-md-0 px-1"><a class="nav-link show active" data-bs-toggle="pill" data-toggle="tab" href="#user_kael_descv2" style="display:block;padding:10px 8px;font-weight:bold;letter-spacing:1px;border-radius:3px;background:#fff5db;color:#1a252f;text-decoration:none;box-shadow: 0 4px 8px rgba(0,0,0,0.15);transform:rotate(-1.5deg);">✦ DESCRIPTION ✦</a></li>
+		<li class="col-12 col-md-4 mb-2 mb-md-0 px-1"><a class="nav-link show" data-bs-toggle="pill" data-toggle="tab" href="#user_kael_notesv2" style="display:block;padding:10px 8px;font-weight:bold;letter-spacing:1px;border-radius:3px;background:#fef0cc;color:#5a6872;text-decoration:none;box-shadow: 0 4px 8px rgba(0,0,0,0.15);transform:rotate(1deg);">✦ DESIGN &amp; LORE NOTES ✦</a></li>
+		<li class="col-12 col-md-4 px-1"><a class="nav-link show" data-bs-toggle="pill" data-toggle="tab" href="#user_kael_interv2" style="display:block;padding:10px 8px;font-weight:bold;letter-spacing:1px;border-radius:3px;background:#fae5b8;color:#5a6872;text-decoration:none;box-shadow: 0 4px 8px rgba(0,0,0,0.15);transform:rotate(-0.5deg);">✦ INTERACTIONS ✦</a></li>
+	</ul>
+	<div class="tab-content"><!-- ONGLET 1 : DESCRIPTION / LORE -->
+		<div class="tab-pane fade active show" id="user_kael_descv2">
+			<div style="background:#fefbf4;border-radius:4px;padding:24px;box-shadow: 0 10px 25px rgba(0,0,0,0.18);position:relative;transform:rotate(-0.3deg);"><!-- Scotch aux coins de la feuille -->
+				<div style="position:absolute;top:-10px;left:30px;width:80px;height:22px;background:rgba(225,210,185,0.85);border-left:2px dashed rgba(160,140,115,0.7);border-right:2px dashed rgba(160,140,115,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.2);transform:rotate(2deg);z-index:10;pointer-events:none;"><br></div>
+				<div style="position:absolute;top:-10px;right:30px;width:80px;height:22px;background:rgba(225,210,185,0.85);border-left:2px dashed rgba(160,140,115,0.7);border-right:2px dashed rgba(160,140,115,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.2);transform:rotate(-1.5deg);z-index:10;pointer-events:none;"><br></div>
+				<div style="margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid #b8a38b;text-align:center;">
+					<h1 style="font-family:'Georgia', serif;color:#1a252f;font-size:1.5em;margin:0;text-shadow: 1px 1px 0px rgba(255,255,255,0.6);">{{name}}, {{title}}</h1>
+				</div>
+				<div style="background:#fffaf0;border:2px solid #b8a38b;border-radius:4px;padding:16px;box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);">
+					<p style="margin:0 0 12px;font-size:0.85em;font-weight:bold;color:#a04500;letter-spacing:1px;text-transform:uppercase;font-family:'Georgia', serif;">✶ LORE</p>
+					<div class="card bg-transparent border-0"><a class="card-header bg-transparent p-0 text-decoration-none collapsed" data-bs-toggle="collapse" data-toggle="collapse" href="#lore-kael" style="cursor: pointer;"><span style="background:#f0e6d6;border-radius:20px;font-weight:bold;font-size:0.9em;display:block;text-align:center;padding:10px;margin-bottom:4px;color:#1a252f;border:2px solid #b8a38b;box-shadow: 0 2px 5px rgba(0,0,0,0.08);">&nbsp; &nbsp; &nbsp;<img src="https://ffxiv.gamerescape.com/w/images/1/18/Lorequest1_Icon.png" alt="hobby-icon" class="fr-fic fr-dii" width="18" height="14.4375">&nbsp; &nbsp;Click here if you want to see/hide the longer lore description &nbsp;&nbsp;</span></a>
+						<div class="collapse" id="lore-kael">
+							<hr style="border-color:#b8a38b;border-width:2px;">
+							<div style="padding:6px 6px 6px 14px;border-left:3px solid #a04500;font-size:0.95em;line-height:1.7;color:#222;margin:0 0 10px;font-weight:500;background:rgba(240,230,214,0.3);border-radius:0 4px 4px 0;">
+								<p style="white-space:pre-wrap;"> {{description}}</p><br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- ONGLET 2 : DESIGN & LORE NOTES (DEUX FEUILLES SÉPARÉES) -->
+		<div class="tab-pane fade" id="user_kael_notesv2">
+			<div class="row">
+				<div class="col-12 col-md-6 mb-3 mb-md-0">
+					<div style="background:#fefbf4;border-radius:4px;padding:20px;height:100%;font-size:0.9em;line-height:1.7;font-weight:500;box-shadow: 0 8px 20px rgba(0,0,0,0.15);position:relative;transform:rotate(-0.8deg);">
+						<div style="position:absolute;top:-10px;left:40px;width:75px;height:22px;background:rgba(225,210,185,0.85);border-left:2px dashed rgba(160,140,115,0.7);border-right:2px dashed rgba(160,140,115,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.2);transform:rotate(1.5deg);z-index:10;pointer-events:none;"><br></div>
+						<h3 style="font-family:'Georgia', serif;font-size:1.1em;color:#1a252f;margin-top:0;"><img src="https://ffxiv.gamerescape.com/w/images/thumb/d/da/061828.png/32px-061828.png" alt="design-icon" class="fr-fic fr-dii" width="18" style="margin-right:6px;vertical-align:middle;" height="18">Design</h3>
+						<p style="white-space:pre-wrap;">{{design_note}}</p>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div style="background:#fefbf4;border-radius:4px;padding:20px;height:100%;font-size:0.9em;line-height:1.7;font-weight:500;box-shadow: 0 8px 20px rgba(0,0,0,0.15);position:relative;transform:rotate(0.6deg);">
+						<div style="position:absolute;top:-10px;right:40px;width:75px;height:22px;background:rgba(225,210,185,0.85);border-left:2px dashed rgba(160,140,115,0.7);border-right:2px dashed rgba(160,140,115,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.2);transform:rotate(-2deg);z-index:10;pointer-events:none;"><br></div>
+						<h3 style="font-family:'Georgia', serif;font-size:1.1em;color:#1a252f;margin-top:0;"><img src="https://xivapi.com/i/061000/061419.png" class="d-inline-block align-middle fr-fic fr-dii" alt="lore-icon" width="18" style="margin-right:6px;vertical-align:middle;" height="18">Lore</h3>
+						<p style="white-space:pre-wrap;">{{lore_note}}</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- ONGLET 3 : INTERACTIONS -->
+		<div class="tab-pane fade" id="user_kael_interv2" style="font-size:0.85em; line-height:1.6; font-family:'Courier New', Courier, monospace;">
+			{{#if interactions}}
+			{{#each interactions}}
+			{{#if duo}}
+			<div style="margin-bottom:25px; background:#fdfbf7; border-radius:3px; box-shadow:0 8px 20px rgba(0,0,0,0.1), inset 0 0 30px rgba(235,220,195,0.3); position:relative; transform:rotate(-0.3deg); padding:25px 20px 20px 20px; background-image: linear-gradient(#f0e6ce 1px, transparent 1px); background-size: 100% 1.6em;">
+				<div style="position:absolute; top:-10px; left:45px; width:70px; height:20px; background:rgba(230,215,190,0.85); border-left:2px dashed rgba(160,140,115,0.7); border-right:2px dashed rgba(160,140,115,0.7); box-shadow:0 1px 3px rgba(0,0,0,0.15); transform:rotate(1deg); z-index:10; pointer-events:none;"><br></div>
+				<div style="position:absolute; top:-15px; right:30px; background:#fff1a8; padding:6px 12px; font-size:0.9em; font-weight:bold; color:#2c3e50; border:1px solid #d5ce98; border-radius:2px; box-shadow:2px 3px 6px rgba(0,0,0,0.1); transform:rotate(2.5deg); font-family:'Courier New', Courier, monospace; z-index:11;"><img src="https://ffxiv.gamerescape.com/w/images/3/34/Mob14_Icon.png" alt="icon" width="14" height="17.1953" class="fr-fic fr-dii">With <a href="{{link}}" rel="noopener noreferrer" style="color:#1d6fa5; font-weight:bold;" target="_blank">{{with}}</a></div>
+				<div style="display:flex; flex-direction:column; gap:8px; margin-top:5px; font-size:1.05em;">
+					{{#each lines}}
+					<div style="display:flex; justify-content:{{speaker.justify}};">
+						<div style="max-width:78%; text-align:{{speaker.align}};"><span style="font-size:0.7em; font-weight:bold; color:{{speaker.color}}; letter-spacing:0.5px; text-transform:uppercase; display:block; margin-bottom:1px;">{{speaker.name}}</span><span style="color:{{speaker.color}}; font-style:italic; white-space:pre-wrap;">{{text}}</span></div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+			{{else}}
+			<div style="margin-bottom:25px; background:#fdfbf7;  border-radius:3px; box-shadow:0 8px 20px rgba(0,0,0,0.1), inset 0 0 30px rgba(235,220,195,0.3); position:relative; transform:rotate(0.4deg); border-left:4px solid #9c3800; padding:25px 20px 20px 20px; background-image: linear-gradient(#f0e6ce 1px, transparent 1px); background-size: 100% 1.6em;">
+				<div style="position:absolute; top:-10px; right:45px; width:70px; height:20px; background:rgba(230,215,190,0.85); border-left:2px dashed rgba(160,140,115,0.7); border-right:2px dashed rgba(160,140,115,0.7); box-shadow:0 1px 3px rgba(0,0,0,0.15); transform:rotate(-1.5deg); z-index:10; pointer-events:none;"><br></div>
+				<div style="position:absolute; top:-15px; left:30px; background:#ffccd5; padding:6px 12px; font-size:0.9em; font-weight:bold; color:#2c3e50; border:1px solid #e2a8b3; border-radius:2px; box-shadow:2px 3px 6px rgba(0,0,0,0.1); transform:rotate(-2deg); font-family:'Courier New', Courier, monospace; z-index:11;"><img src="https://ffxiv.gamerescape.com/w/images/3/34/Mob14_Icon.png" alt="icon" width="14" height="17.1953" class="fr-fic fr-dii">{{title}}
+					<div style="font-size:0.7em; font-weight:normal; margin-top:2px;">{{#each characters}}<span style="color:{{color}}; font-size:10px;">{{name}}</span>{{#unless @last}}, {{/unless}}{{/each}}</div>
+				</div>
+				<div style="font-size:1.05em; color:#1a252f; margin-top:12px; padding:0 5px;">
+					{{#each lines}}<div style="border-left:3px solid {{speaker.color}}; padding-left:10px; margin-bottom:10px;white-space:pre-wrap;">{{text}}</div>{{/each}}
+				</div>
+				{{#if commonText}}<div style="display:flex; align-items:center; gap:10px; margin:3px 5px 0 5px;">
+						<div style="width:3px; height:15px; background:linear-gradient(to bottom, {{commonColor}});"><br></div>
+						<div style="font-style:italic; color:#555;">{{commonText}}</div>
+					</div>
+				{{/if}}
+			</div>
+			{{/if}}
+			{{/each}}
+			{{/if}}
+			<!-- Petit post-it de bas de page -->
+			<div style="background:#fefbf4; padding:10px 15px; font-size:0.8em; text-align:center; font-style:italic; color:#1a252f; font-weight:bold; border-radius:4px; box-shadow:0 4px 10px rgba(0,0,0,0.1); position:relative; transform:rotate(0.5deg); width:80%; margin:0 auto;"><span style="font-size: 11px;">Look at links for more ;)</span></div>
+			</div><!-- PIED DE PAGE -->
+		<div style="background:#f0e6d6;border-radius:4px;padding:12px;text-align:center;margin-top:25px;transform:rotate(-0.5deg);box-shadow: 0 6px 15px rgba(0,0,0,0.15);position:relative;">
+			<div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(1deg);width:90px;height:22px;background:rgba(225,210,185,0.85);border-left:2px dashed rgba(160,140,115,0.7);border-right:2px dashed rgba(160,140,115,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.2);z-index:10;pointer-events:none;"><br></div><img src="https://ffxiv.gamerescape.com/w/images/b/b5/Player37_Icon.png" alt="end-icon" class="fr-fic fr-dii" width="20" height="20">
+			<p style="margin:4px 0 0;font-size:12px;color:#4a3b32;text-transform:uppercase;letter-spacing:1px;font-weight:bold;">Congrats you survived until here</p>
+		</div>
+	</div>
+</div>
