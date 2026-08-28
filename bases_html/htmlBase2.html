@@ -106,43 +106,56 @@
 					</div>
 				</div>
 			</div>
-		</div><!-- ONGLET 3 : INTERACTIONS -->
-		<div class="tab-pane fade" id="user_kael_interv2" style="font-size:0.85em; line-height:1.6; font-family:'Courier New', Courier, monospace;">
-			{{#if interactions}}
-			{{#each interactions}}
-			{{#if duo}}
-			<div style="margin-bottom:25px; background:#fdfbf7; border-radius:3px; box-shadow:0 8px 20px rgba(0,0,0,0.1), inset 0 0 30px rgba(235,220,195,0.3); position:relative; transform:rotate(-0.3deg); padding:25px 20px 20px 20px; background-image: linear-gradient(#f0e6ce 1px, transparent 1px); background-size: 100% 1.6em;">
-				<div style="position:absolute; top:-10px; left:45px; width:70px; height:20px; background:rgba(230,215,190,0.85); border-left:2px dashed rgba(160,140,115,0.7); border-right:2px dashed rgba(160,140,115,0.7); box-shadow:0 1px 3px rgba(0,0,0,0.15); transform:rotate(1deg); z-index:10; pointer-events:none;"><br></div>
-				<div style="position:absolute; top:-15px; right:30px; background:#fff1a8; padding:6px 12px; font-size:0.9em; font-weight:bold; color:#2c3e50; border:1px solid #d5ce98; border-radius:2px; box-shadow:2px 3px 6px rgba(0,0,0,0.1); transform:rotate(2.5deg); font-family:'Courier New', Courier, monospace; z-index:11;"><img src="https://ffxiv.gamerescape.com/w/images/3/34/Mob14_Icon.png" alt="icon" width="14" height="17.1953" class="fr-fic fr-dii">With <a href="{{link}}" rel="noopener noreferrer" style="color:#1d6fa5; font-weight:bold;" target="_blank">{{with}}</a></div>
-				<div style="display:flex; flex-direction:column; gap:8px; margin-top:5px; font-size:1.05em;">
-					{{#each lines}}
-					<div style="display:flex; justify-content:{{speaker.justify}};">
-						<div style="max-width:78%; text-align:{{speaker.align}};">{{#if speaker.name}}<span style="font-size:0.7em; font-weight:bold; color:{{speaker.color}}; letter-spacing:0.5px; text-transform:uppercase; display:block; margin-bottom:1px;">{{speaker.name}}</span>{{/if}}<span style="color:{{speaker.color}}; font-style:italic; white-space:pre-wrap;">{{text}}</span></div>
-					</div>
-					{{/each}}
-				</div>
-			</div>
-			{{else}}
-			<div style="margin-bottom:25px; background:#fdfbf7;  border-radius:3px; box-shadow:0 8px 20px rgba(0,0,0,0.1), inset 0 0 30px rgba(235,220,195,0.3); position:relative; transform:rotate(0.4deg); border-left:4px solid #9c3800; padding:25px 20px 20px 20px; background-image: linear-gradient(#f0e6ce 1px, transparent 1px); background-size: 100% 1.6em;">
-				<div style="position:absolute; top:-10px; right:45px; width:70px; height:20px; background:rgba(230,215,190,0.85); border-left:2px dashed rgba(160,140,115,0.7); border-right:2px dashed rgba(160,140,115,0.7); box-shadow:0 1px 3px rgba(0,0,0,0.15); transform:rotate(-1.5deg); z-index:10; pointer-events:none;"><br></div>
-				<div style="position:absolute; top:-15px; left:30px; background:#ffccd5; padding:6px 12px; font-size:0.9em; font-weight:bold; color:#2c3e50; border:1px solid #e2a8b3; border-radius:2px; box-shadow:2px 3px 6px rgba(0,0,0,0.1); transform:rotate(-2deg); font-family:'Courier New', Courier, monospace; z-index:11;"><img src="https://ffxiv.gamerescape.com/w/images/3/34/Mob14_Icon.png" alt="icon" width="14" height="17.1953" class="fr-fic fr-dii">{{title}}
-					<div style="font-size:0.7em; font-weight:normal; margin-top:2px;">{{#each characters}}<span style="color:{{color}}; font-size:10px;">{{name}}</span>{{#unless @last}}, {{/unless}}{{/each}}</div>
-				</div>
-				<div style="font-size:1.05em; color:#1a252f; margin-top:12px; padding:0 5px;">
-					{{#each lines}}<div style="border-left:3px solid {{speaker.color}}; padding-left:10px; margin-bottom:10px;white-space:pre-wrap;">{{text}}</div>{{/each}}
-				</div>
-				{{#if commonText}}<div style="display:flex; align-items:center; gap:10px; margin:3px 5px 0 5px;">
-						<div style="width:3px; height:15px; background:linear-gradient(to bottom, {{commonColor}});"><br></div>
-						<div style="font-style:italic; color:#555;">{{commonText}}</div>
-					</div>
-				{{/if}}
-			</div>
-			{{/if}}
-			{{/each}}
-			{{/if}}
-			<!-- Petit post-it de bas de page -->
-			<div style="background:#fefbf4; padding:10px 15px; font-size:0.8em; text-align:center; font-style:italic; color:#1a252f; font-weight:bold; border-radius:4px; box-shadow:0 4px 10px rgba(0,0,0,0.1); position:relative; transform:rotate(0.5deg); width:80%; margin:0 auto;"><span style="font-size: 11px;">Look at links for more ;)</span></div>
-			</div><!-- PIED DE PAGE -->
+		</div>
+		<!-- ONGLET 3 : INTERACTIONS -->
+<div class="tab-pane fade" id="user_kael_interv2" style="font-size:1.05em; line-height:1.6; font-family:'Courier New', Courier, monospace;">
+    {{#if interactions}}
+    {{#each interactions}}
+
+    {{!-- Bloc DUO --}}
+    {{#if duo}}
+    <div style="margin-bottom:25px; width:55%; margin-left:{{position_left}}; margin-right:{{position_right}}; background:#fdfbf7; border-radius:3px; box-shadow:0 8px 20px rgba(0,0,0,0.1), inset 0 0 30px rgba(235,220,195,0.3); position:relative; transform:rotate(-0.3deg); padding:25px 20px 20px 20px; background-image: linear-gradient(#f0e6ce 1px, transparent 1px); background-size: 100% 1.6em;">
+        <div style="position:absolute; top:-10px; left:45px; width:70px; height:20px; background:rgba(230,215,190,0.85); border-left:2px dashed rgba(160,140,115,0.7); border-right:2px dashed rgba(160,140,115,0.7); box-shadow:0 1px 3px rgba(0,0,0,0.15); transform:rotate(1deg); z-index:10; pointer-events:none;"><br></div>
+        <div style="position:absolute; top:-15px; right:30px; background:#fff1a8; padding:6px 12px; font-size:0.9em; font-weight:bold; color:#2c3e50; border:1px solid #d5ce98; border-radius:2px; box-shadow:2px 3px 6px rgba(0,0,0,0.1); transform:rotate(2.5deg); font-family:'Courier New', Courier, monospace; z-index:11;"><img src="https://ffxiv.gamerescape.com/w/images/3/34/Mob14_Icon.png" alt="icon" width="14" height="17.1953" class="fr-fic fr-dii">With <a href="{{link}}" rel="noopener noreferrer" style="color:#1d6fa5; font-weight:bold;" target="_blank">{{with}}</a></div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:5px;">
+            {{#each lines}}
+            <div style="display:flex; justify-content:{{speaker.justify}};">
+                <div style="max-width:78%; text-align:{{speaker.align}};">{{#if speaker.name}}<span style="font-size:0.7em; font-weight:bold; color:{{speaker.color}}; letter-spacing:0.5px; text-transform:uppercase; display:block; margin-bottom:1px;">{{speaker.name}}</span>{{/if}}<span style="color:{{speaker.color}}; font-style:italic; white-space:pre-wrap;">{{text}}</span></div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    
+    {{!-- Bloc STANDARD --}}
+    {{else}}
+    <div style="margin-bottom:25px; width:55%; margin-left:{{position_left}}; margin-right:{{position_right}}; background:#fdfbf7; border-radius:3px; box-shadow:0 8px 20px rgba(0,0,0,0.1), inset 0 0 30px rgba(235,220,195,0.3); position:relative; transform:rotate(0.4deg); border-left:4px solid #9c3800; padding:25px 20px 20px 20px; background-image: linear-gradient(#f0e6ce 1px, transparent 1px); background-size: 100% 1.6em;">
+        <div style="position:absolute; top:-10px; right:45px; width:70px; height:20px; background:rgba(230,215,190,0.85); border-left:2px dashed rgba(160,140,115,0.7); border-right:2px dashed rgba(160,140,115,0.7); box-shadow:0 1px 3px rgba(0,0,0,0.15); transform:rotate(-1.5deg); z-index:10; pointer-events:none;"><br></div>
+        <div style="position:absolute; top:-15px; left:30px; background:#ffccd5; padding:6px 12px; font-size:0.9em; font-weight:bold; color:#2c3e50; border:1px solid #e2a8b3; border-radius:2px; box-shadow:2px 3px 6px rgba(0,0,0,0.1); transform:rotate(-2deg); font-family:'Courier New', Courier, monospace; z-index:11;"><img src="https://ffxiv.gamerescape.com/w/images/3/34/Mob14_Icon.png" alt="icon" width="14" height="17.1953" class="fr-fic fr-dii">{{title}}
+            <div style="font-size:0.7em; font-weight:normal; margin-top:2px;">{{#each characters}}<span style="color:{{color}}; font-size:10px;">{{name}}</span>{{#unless @last}}, {{/unless}}{{/each}}</div>
+        </div>
+        <div style="color:#1a252f; margin-top:12px; padding:0 5px;">
+            {{#each lines}}<div style="border-left:3px solid {{speaker.color}}; padding-left:10px; margin-bottom:10px;white-space:pre-wrap;">{{text}}</div>{{/each}}
+        </div>
+        {{#if commonText}}<div style="display:flex; align-items:center; gap:10px; margin:3px 5px 0 5px;">
+                <div style="width:3px; height:15px; background:linear-gradient(to bottom, {{commonColor}});"><br></div>
+                <div style="font-style:italic; color:#555;">{{commonText}}</div>
+            </div>
+        {{/if}}
+    </div>
+    {{/if}}
+
+    {{/each}}
+    {{/if}}
+    
+    <!-- Petit post-it de bas de page -->
+    <div style="background:#fefbf4; padding:10px 15px; font-size:0.8em; text-align:center; font-style:italic; color:#1a252f; font-weight:bold; border-radius:4px; box-shadow:0 4px 10px rgba(0,0,0,0.1); position:relative; transform:rotate(0.5deg); width:80%; margin:0 auto;"><span style="font-size: 11px;">Look at links for more ;)</span></div>
+</div>
+
+<!-- PIED DE PAGE -->
+<div style="background:#f0e6d6;border-radius:4px;padding:12px;text-align:center;margin-top:25px;transform:rotate(-0.5deg);box-shadow: 0 6px 15px rgba(0,0,0,0.15);position:relative;">
+    <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(1deg);width:90px;height:22px;background:rgba(225,210,185,0.85);border-left:2px dashed rgba(160,140,115,0.7);border-right:2px dashed rgba(160,140,115,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.2);z-index:10;pointer-events:none;"><br></div><img src="https://ffxiv.gamerescape.com/w/images/b/b5/Player37_Icon.png" alt="end-icon" class="fr-fic fr-dii" width="20" height="20">
+    <p style="margin:4px 0 0;font-size:12px;color:#4a3b32;text-transform:uppercase;letter-spacing:1px;font-weight:bold;">Congrats you survived until here</p>
+</div><!-- PIED DE PAGE -->
 		<div style="background:#f0e6d6;border-radius:4px;padding:12px;text-align:center;margin-top:25px;transform:rotate(-0.5deg);box-shadow: 0 6px 15px rgba(0,0,0,0.15);position:relative;">
 			<div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(1deg);width:90px;height:22px;background:rgba(225,210,185,0.85);border-left:2px dashed rgba(160,140,115,0.7);border-right:2px dashed rgba(160,140,115,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.2);z-index:10;pointer-events:none;"><br></div><img src="https://ffxiv.gamerescape.com/w/images/b/b5/Player37_Icon.png" alt="end-icon" class="fr-fic fr-dii" width="20" height="20">
 			<p style="margin:4px 0 0;font-size:12px;color:#4a3b32;text-transform:uppercase;letter-spacing:1px;font-weight:bold;">Congrats you survived until here</p>

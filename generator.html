@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generateur de fiche</title>
+  <style>
+    :root { color-scheme: light; font-family: Georgia, serif; color: #263238; background: #eee8df; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 1200px; margin: 0 auto; padding: 28px; }
+    h1 { margin: 0 0 8px; color: #8c3200; }
+    p { margin: 0 0 20px; }
+    .workspace { display: grid; grid-template-columns: minmax(280px, 390px) minmax(0, 1fr); gap: 24px; }
+    .panel { background: #fffaf0; border: 1px solid #c7b89e; border-radius: 6px; padding: 20px; box-shadow: 0 8px 24px rgba(58, 43, 28, 0.14); }
+    label { display: block; margin: 16px 0 6px; font-weight: bold; }
+    input[type="file"] { width: 100%; }
+    textarea { width: 100%; min-height: 430px; resize: vertical; padding: 12px; border: 1px solid #b8a38b; border-radius: 4px; background: #fdfbf7; color: #222; font: 13px/1.5 Consolas, monospace; }
+    button { margin-top: 14px; padding: 10px 14px; border: 1px solid #8c3200; border-radius: 4px; background: #8c3200; color: white; font-weight: bold; cursor: pointer; }
+    button.secondary { background: #fffaf0; color: #8c3200; }
+    button:disabled { opacity: 0.45; cursor: not-allowed; }
+    #status { min-height: 22px; margin-top: 12px; color: #42633f; font-size: 0.9rem; }
+    #status.error { color: #a00000; }
+    iframe { width: 100%; min-height: 760px; border: 1px solid #c7b89e; border-radius: 4px; background: white; }
+    @media (max-width: 800px) { main { padding: 16px; } .workspace { grid-template-columns: 1fr; } iframe { min-height: 620px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Generateur de fiche</h1>
+    <p>Selectionne la base HTML et les donnees JSON, puis exporte une nouvelle fiche.</p>
+    <div class="workspace">
+      <section class="panel" aria-label="Donnees du generateur">
+        <label for="base-file">Base HTML</label>
+        <input id="base-file" type="file" accept=".html,.htm,text/html">
+        <label for="data-file">Fichier JSON</label>
+        <input id="data-file" type="file" accept=".json,application/json">
+        <label for="data-editor">Donnees JSON</label>
+        <textarea id="data-editor" spellcheck="false" placeholder="Charge un fichier JSON ou colle tes donnees ici..."></textarea>
+        <button id="generate" type="button">Actualiser l'apercu</button>
+        <button id="download" class="secondary" type="button" disabled>Telecharger la fiche HTML</button>
+        <div id="status" role="status" aria-live="polite"></div>
+      </section>
+      <section class="panel" aria-label="Apercu de la fiche">
+        <iframe id="preview" title="Apercu de la fiche"></iframe>
+      </section>
+    </div>
+  </main>
+  <script src="generator.js"></script>
+</body>
+</html>
