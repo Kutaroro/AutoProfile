@@ -120,37 +120,18 @@ function renderSection(template, context, meta = {}) {
 }
 
 // Formate le texte : convertit \n en <br> et applique les formatages markdown.
-// Supporte l'échappement avec backslash : \* \` \_ \| pour littéraux
 // **texte** -> <strong>texte</strong> (gras)
 // *texte* -> <em>texte</em> (italique)
 // __texte__ -> <u>texte</u> (souligné)
 // `texte` -> <span style="font-family:monospace;">texte</span> (monospace)
-// ||texte|| -> <p>texte</p> (paragraphe)
 function formatNewlines(value) {
   let text = String(value).replace(/\n/g, '<br>');
-  
-  // Placer les caractères échappés dans des placeholders temporaires
-  const escapeMap = {};
-  let escapeIndex = 0;
-  text = text.replace(/\\([*`_|])/g, (match, char) => {
-    const placeholder = `__ESCAPE_${escapeIndex}__`;
-    escapeMap[placeholder] = char;
-    escapeIndex++;
-    return placeholder;
-  });
-  
-  // Appliquer les formatages markdown
   text = text.replace(/`(.+?)`/g, '<span style="font-family:monospace;">$1</span>');  // `monospace`
   text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');  // **gras**
   text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');              // *italique*
   text = text.replace(/__(.+?)__/g, '<u>$1</u>');                // __souligné__
   text = text.replace(/\|\|(.+?)\|\|/g, '<p>$1</p>');            // ||paragraphe||
-  text = text.replace(/\[s](.+?)\[\/s]/g, '<small>$1</small>');  // [s]small[/s]
-  
-  // Reconvertir les placeholders en caractères littéraux
-  Object.entries(escapeMap).forEach(([placeholder, char]) => {
-    text = text.replaceAll(placeholder, char);
-  });
+  text = text.replace(/\[s](.+?)\[s]/g, '<small>$1</small>');   // [s]small[s]
   
   return text;
 }
