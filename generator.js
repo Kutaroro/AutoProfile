@@ -5,6 +5,7 @@ const preview = document.querySelector('#preview');
 const statusMessage = document.querySelector('#status');
 const generateButton = document.querySelector('#generate');
 const downloadButton = document.querySelector('#download');
+const copyButton = document.querySelector('#copy');
 
 let baseTemplate = '';
 let renderedHtml = '';
@@ -203,9 +204,11 @@ function render() {
     preview.srcdoc = renderedHtml;
     setStatus('Apercu mis a jour.');
     downloadButton.disabled = false;
+    copyButton.disabled = false;
   } catch (error) {
     renderedHtml = '';
     downloadButton.disabled = true;
+    copyButton.disabled = true;
     setStatus(error.message, true);
   }
 }
@@ -241,8 +244,34 @@ function download() {
   setStatus('Fichier HTML cree.');
 }
 
+// Copie le document HTML autonome dans le presse-papiers.
+async function copy() {
+  if (!renderedHtml) return;
+  const data = getData();
+  const documentText = createDocument(renderedHtml, data);
+
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(documentText);
+    } else {
+      const textArea = document.createElement('textarea');
+      textArea.value = documentText;
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      textArea.remove();
+    }
+    setStatus('HTML copie dans le presse-papiers.');
+  } catch (error) {
+    setStatus('Impossible de copier le HTML.', true);
+  }
+}
+
 baseFileInput.addEventListener('change', loadBaseFile);
 dataFileInput.addEventListener('change', loadDataFile);
 dataEditor.addEventListener('input', render);
 generateButton.addEventListener('click', render);
 downloadButton.addEventListener('click', download);
+copyButton.addEventListener('click', copy);
