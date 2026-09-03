@@ -137,11 +137,32 @@ function formatNewlines(value) {
   return text;
 }
 
+function lightenColor(value, whiteRatio = 0.8) {
+  const color = String(value).trim();
+  let channels;
+
+  if (/^#[0-9a-f]{3}$/i.test(color)) {
+    channels = color.slice(1).split('').map((channel) => parseInt(channel + channel, 16));
+  } else if (/^#[0-9a-f]{6}$/i.test(color)) {
+    channels = [0, 2, 4].map((offset) => parseInt(color.slice(1 + offset, 3 + offset), 16));
+  } else {
+    const rgbMatch = color.match(/^rgb\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i);
+    if (rgbMatch) channels = rgbMatch.slice(1).map(Number);
+  }
+
+  if (!channels) return '#d7eaf4';
+  const lightened = channels.map((channel) => Math.round(channel + (255 - channel) * whiteRatio));
+  return `#${lightened.map((channel) => channel.toString(16).padStart(2, '0')).join('')}`;
+}
+
 // Remplace les variables simples : {{value}} est echappe, {{{value}}} ne l'est pas.
 function replaceValues(text, context, meta) {
   return text.replace(/{{{\s*([^{}]+?)\s*}}}|{{\s*([^{}#\/][^{}]*?)\s*}}/g, (_, rawPath, escapedPath) => {
     const path = (rawPath || escapedPath).trim();
-    const value = getValue(context, path, meta);
+    const lightenMatch = path.match(/^lighten\s+(.+)$/);
+    const value = lightenMatch
+      ? lightenColor(getValue(context, lightenMatch[1], meta))
+      : getValue(context, path, meta);
     if (rawPath) {
       // Pour {{{...}}}, appliquer le helper si c'est du texte
       return typeof value === 'string' ? formatNewlines(value) : String(value);
