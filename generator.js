@@ -132,7 +132,8 @@ function formatNewlines(value) {
   text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');              // *italique*
   text = text.replace(/__(.+?)__/g, '<u>$1</u>');                // __souligné__
   text = text.replace(/\|\|(.+?)\|\|/g, '<p>$1</p>');            // ||paragraphe||
-  text = text.replace(/\[s](.+?)\[s]/g, '<small>$1</small>');   // [s]small[s]
+  text = text.replace(/\[s](.+?)\[s]/g, '<small>$1</small>');    // [s]small[s]
+  text = text.replace(/\[a](.+?)\[a]/g, '*$1*');                 // [a]*texte*[a]
   
   return text;
 }
